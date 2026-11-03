@@ -413,4 +413,12 @@ c44 -26 121 -113 162 -185 111 -196 194 -329 462 -740 186 -284 308 -475 475
 document.documentElement.classList.add('js');
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv:not(.on)').forEach(function(el,i){el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)});</script>
+<script>
+/* 소식: news 브랜치의 news.json을 읽어 표시 (실패하면 위 기본 카드 유지) */
+(function(){var box=document.querySelector('#news .news');if(!box||!window.fetch)return;
+var e=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+fetch('https://api.github.com/repos/vbration5001-SpaceVia/spacevia-website/contents/news.json?ref=news',{headers:{Accept:'application/vnd.github.raw+json'},cache:'no-store'})
+.then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(a){if(!Array.isArray(a)||!a.length)return;
+box.innerHTML=a.slice(0,8).map(function(n,i){var d=e(n.date);return '<article class="nw'+(i?'':' new')+'"><time datetime="'+d+'">'+d.replace(/-/g,'.')+'</time><div><span class="tg">'+e(n.tag)+'</span><h3>'+e(n.title)+'</h3><p>'+e(n.body)+'</p></div></article>'}).join('')}).catch(function(){})})();
+</script>
 </body></html>
