@@ -135,6 +135,17 @@ section.alt .flow4>div{background:#fff}
 .notice .empty{margin-top:28px;padding:32px;border-radius:18px;background:var(--g1);text-align:center;color:var(--g5);font-size:16px}
 .mail{display:inline-block;margin-top:24px;font-size:clamp(20px,3vw,26px);font-weight:700;color:var(--blue);user-select:all}
 @media(max-width:760px){.info div{grid-template-columns:84px 1fr}.info dd{font-size:16px}.notice{padding:28px 22px;border-radius:24px}}
+
+/* 소식 (AI 오피스가 갱신) */
+.news{margin-top:40px;display:grid;gap:14px}
+.nw{display:grid;grid-template-columns:132px 1fr;gap:20px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 28px}
+.alt .nw{background:#fff}.blk:not(.alt) .nw{background:var(--g0)}
+.nw time{font-size:15px;font-weight:600;color:var(--g5);padding-top:3px}
+.nw .tg{display:inline-block;font-size:13px;font-weight:700;color:var(--blue);background:#EBF0FE;border-radius:8px;padding:2px 9px;margin-bottom:8px}
+.nw h3{margin:0;font-size:20px;line-height:1.45;letter-spacing:-.02em;color:var(--ink)}
+.nw p{margin:6px 0 0;font-size:16px;line-height:1.7;color:var(--g6)}
+.nw.new{border-color:var(--blue);box-shadow:0 0 0 3px rgba(51,102,240,.12)}
+@media(max-width:640px){.nw{grid-template-columns:1fr;gap:6px;padding:20px}}
 </style></head><body>
 <header class="svh" id="svh"><div class="svh-in"><a class="svh-logo" href="index.html" aria-label="SpaceVia 홈"><svg xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SpaceVia" viewBox="-135.8 13.6 694.0 125.7"><svg x="-127.8" y="21.6" width="108.1" height="109.7" viewBox="0 0 340.0 345.0"><g transform="translate(10.882,8.235) scale(0.147059) translate(0,2190.000) scale(0.1,-0.1)" fill="currentColor"><path d="M20910 21090 c-8 -5 -37 -18 -65 -29 -27 -10 -223 -104 -435 -209
 -442 -218 -1098 -522 -1126 -522 -7 0 -373 -165 -513 -231 -68 -33 -125 -59
@@ -353,7 +364,18 @@ c44 -26 121 -113 162 -185 111 -196 194 -329 462 -740 186 -284 308 -475 475
  </dl>
 </div></section>
 
-<section class="blk" id="company"><div class="wrap">
+<section class="blk" id="news"><div class="wrap">
+ <div class="kicker rv">소식</div>
+ <h2 class="rv">SpaceVia의 요즘</h2>
+ <div class="news rv">
+<!--NEWS:START-->
+    <article class="nw new"><time datetime="2026-10-22">2026.10.22</time><div><span class="tg">회사</span><h3>나라장터 경쟁입찰참가자격 등록</h3><p>학술·연구용역 분야로 조달 등록을 마쳤습니다.</p></div></article>
+  <article class="nw"><time datetime="2026-09-30">2026.09.30</time><div><span class="tg">회사</span><h3>주식회사 스페이스비아 설립</h3><p>경기도 용인시에서 교통·공간 컨설팅 회사로 출발했습니다.</p></div></article>
+<!--NEWS:END-->
+ </div>
+</div></section>
+
+<section class="blk alt" id="company"><div class="wrap">
  <div class="kicker rv">회사 정보</div>
  <h2 class="rv">주식회사 스페이스비아</h2>
  <dl class="info rv">
@@ -367,7 +389,7 @@ c44 -26 121 -113 162 -185 111 -196 194 -329 462 -740 186 -284 308 -475 475
  </dl>
 </div></section>
 
-<section class="blk alt" id="notice"><div class="wrap">
+<section class="blk" id="notice"><div class="wrap">
  <div class="kicker rv">회사 공고</div>
  <h2 class="rv">정관에서 정한<br class="d">공고 게재 장소입니다</h2>
  <div class="notice rv" style="background:var(--g1)">
